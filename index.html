@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D3 UMAP Plot</title>
+  
+  <style>
+    .flex-container {
+      display: flex;
+      align-items: flex-start; /* Align items to the top */
+    }
+    .plot-container {
+      flex: 1;
+      padding: 10px;
+    }
+    .common-legend-container {
+      width: 60px; /* Fixed width for the legend */
+      padding: 10px;
+    }
+    .plot {
+      margin-bottom: 20px;
+    }
+
+    /* CSS */
+.loading-animation {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.spinner {
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  border-left-color: #3498db;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+  </style>
+</head>
+<body>
+  <div id="tooltip" style="position: absolute; opacity: 0; background-color: lightgrey; padding: 5px; border: 1px solid grey; border-radius: 5px;"></div>
+  <div class="flex-container">
+    <div id="plot-container" class="plot-container"></div>
+    <div id="legend-container" class="common-legend-container"></div>
+  </div>
+
+  <div id="loading-animation" class="loading-animation">
+  <div class="spinner"></div>
+</div>
+
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
